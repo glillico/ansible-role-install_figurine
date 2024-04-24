@@ -1,2 +1,11 @@
 ---
 # tasks file for ansible-role-install_figurine
+
+- name: Download & extract figurine.
+  ansible.builtin.unarchive:
+    remote_src: true
+    src: "{{ inf_url }}//v{{ inf_version }}/figurine_{{ inf_platform }}_{{ inf_arch }}_v{{ inf_version }}.tar.gz"
+    dest: "{{ inf_path }}"
+    extra_opts: [--strip-components=1]
+    owner: root
+    group: root
