@@ -1,0 +1,18 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Retrieve the file information for figurine.
+      stat:
+        path: "/usr/local/bin/figurine"
+      register: remote_file
+
+    - name: Test that figurene was installed correctly.
+      assert:
+        that:
+          - remote_file.stat.exists
+          - remote_file.stat.isreg
+          - remote_file.stat.path == "/usr/local/bin/figurine"
+          - remote_file.stat.pw_name == 'root'
+          - remote_file.stat.gr_name == 'root'
