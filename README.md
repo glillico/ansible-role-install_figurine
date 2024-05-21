@@ -1,5 +1,7 @@
 # Ansible Role : install_figurine
 
+[![CI](https://github.com/glillico/ansible-role-install_figurine/workflows/CI/badge.svg)](https://github.com/glillico/ansible-role-install_figurine/actions?query=workflow%3ACI)
+
 Download and install the figurine binary.
 
 ## Requirements
