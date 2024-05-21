@@ -21,7 +21,7 @@ jobs:
       - name: Check out git repository.
         uses: actions/checkout@v4
         with:
-          path: 'glillico.update_pkgs'
+          path: 'glillico.install_figurine'
 
       - name: Setup python 3.
         uses: actions/setup-python@v5
@@ -55,7 +55,7 @@ jobs:
       - name: Check out git repository.
         uses: actions/checkout@v4
         with:
-          path: 'glillico.update_pkgs'
+          path: 'glillico.install_figurine'
 
       - name: Setup python 3.
         uses: actions/setup-python@v5
