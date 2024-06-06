@@ -1,38 +1,41 @@
-Role Name
-=========
+# Ansible Role : install_figurine
 
-A brief description of the role goes here.
+[![CI](https://github.com/glillico/ansible-role-install_figurine/workflows/CI/badge.svg)](https://github.com/glillico/ansible-role-install_figurine/actions?query=workflow%3ACI)
 
-Requirements
-------------
+Download and install the figurine binary.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+None
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Role Variables
 
-Dependencies
-------------
+### defaults/main.yml
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+|Variable|Default Values|Description|
+|---|---|---|
+|inf_url|https://github.com/arsham/figurine/releases/download|Download URL|
+|inf_version|1.3.0|Version|
+|inf_platform|linux|OS Platform|
+|inf_arch|arm64|CPU Architechure|
+|inf_path|/usr/local/bin|Path to extract file into|
 
-Example Playbook
-----------------
+By using the above variable values the playbook would download the file `https://github.com/arsham/figurine/releases/download/v1.3.0/figurine_linux_arm64_v1.3.0.tar.gz` and extract it into `/usr/local/bin`.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Dependencies
+
+None
+
+## Example Playbook
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - glillico.install_figurine
 
-License
--------
+## License
 
-BSD
+MIT
 
-Author Information
-------------------
+## Author Information
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Created in 2024 by Graham Lillico.
